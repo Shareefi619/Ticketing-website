@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 
 const Pricing = () => {
@@ -48,7 +49,7 @@ const Pricing = () => {
                                         <div className="buy-button text-center">
                                             <div className="button-6">
                                                 <div className="eff-6" />
-                                                <a href="contact.html">Get Started</a>
+                                                <Link href="/contact">Get Started</Link>
                                             </div>
                                         </div>
                                     </div>
@@ -91,7 +92,7 @@ const Pricing = () => {
                                         <div className="buy-button text-center">
                                             <div className="button-6">
                                                 <div className="eff-6" />
-                                                <a href="contact.html">Get Started</a>
+                                                <Link href="/contact">Get Started</Link>
                                             </div>
                                         </div>
                                     </div>
@@ -133,7 +134,7 @@ const Pricing = () => {
                                         <div className="buy-button text-center">
                                             <div className="button-6">
                                                 <div className="eff-6" />
-                                                <a href="contact.html">Get Started</a>
+                                                <Link href="/contact">Get Started</Link>
                                             </div>
                                         </div>
                                     </div>

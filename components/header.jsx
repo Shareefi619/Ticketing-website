@@ -1,7 +1,14 @@
+import { usePathname } from 'next/navigation';
 import Link from 'next/link';
-import React from 'react';
-
+import { useState } from 'react';
 const Header = () => {
+    const url = usePathname();
+    const isLinkActive = (pathname) => url === pathname;
+    const [isNavbarOpen, setIsNavbarOpen] = useState(false);
+
+    const handleNavbarToggle = () => {
+        setIsNavbarOpen(!isNavbarOpen);
+    };
     return (
         <>
             {/* Headers-4 block */}
@@ -17,37 +24,38 @@ const Header = () => {
                                     ll
                                 </Link>
                                 <button
-                                    className="navbar-toggler"
+                                    className={`navbar-toggler ${isNavbarOpen ? '' : 'collapsed'}`}
                                     type="button"
+                                    onClick={handleNavbarToggle}
                                     data-toggle="collapse"
                                     data-target="#navbarSupportedContent"
                                     aria-controls="navbarSupportedContent"
-                                    aria-expanded="false"
+                                    aria-expanded={isNavbarOpen ? 'true' : 'false'}
                                     aria-label="Toggle navigation"
                                 >
                                     <span className="navbar-toggler-icon" />
                                 </button>
                                 <div
-                                    className="navbar-collapse"
+                                    className={`navbar-collapse ${isNavbarOpen ? 'collapse' : ''}`}
                                     id="navbarSupportedContent"
                                 >
                                     <ul className="navbar-nav ml-auto">
-                                        <li className="nav-item active">
+                                        <li className={`nav-item ${isLinkActive('/') ? 'active' : ''}`}>
                                             <Link href="/" className="nav-link">
                                                 Home
                                             </Link>
                                         </li>
-                                        <li className="nav-item">
+                                        <li className={`nav-item ${isLinkActive('/about') ? 'active' : ''}`}>
                                             <Link href="/about" className="nav-link">
                                                 About
                                             </Link>
                                         </li>
-                                        <li className="nav-item">
+                                        <li className={`nav-item ${isLinkActive('/services') ? 'active' : ''}`}>
                                             <Link href="/services" className="nav-link">
                                                 Destinations
                                             </Link>
                                         </li>
-                                        <li className="nav-item">
+                                        <li className={`nav-item ${isLinkActive('/contact') ? 'active' : ''}`}>
                                             <Link href="/contact" className="nav-link">
                                                 Contact
                                             </Link>
