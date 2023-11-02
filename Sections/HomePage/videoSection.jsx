@@ -47,7 +47,7 @@ const VideoSection = () => {
                     <div className="content-photo">
                         {/*popup*/}
                         <a
-                            href="#small-dialog"
+                            href="https://player.vimeo.com/video/92605278"
                             className="popup-with-zoom-anim play-view text-center position-absolute"
                         >
                             <span className="video-play-icon">
@@ -61,6 +61,7 @@ const VideoSection = () => {
                                 allow="autoplay; fullscreen"
                                 allowFullScreen=""
                             />
+                            <button title="Close (Esc)" type="button" className="mfp-close">x</button>
                         </div>
                         {/*//popup*/}
                     </div>
